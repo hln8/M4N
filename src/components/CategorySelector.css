@@ -1,0 +1,101 @@
+/* ---------- CATEGORY SELECTOR CONTAINER ---------- */
+.category-selector-container {
+    text-align: center;
+    margin: 40px auto;
+    color: #f3e03b; /* Gold text for headings and labels */
+    max-width: 500px; /* Keeps content nicely centered */
+}
+
+/* Title of the category selector (big + bold) */
+.category-selector-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-transform: uppercase; /* Makes title stand out */
+    letter-spacing: 1.5px; /* Adds breathing space between letters */
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Instruction text under the title */
+.category-selector-instructions {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: #ddd; /* Lighter gray for secondary emphasis */
+}
+
+/* Dropdown styling */
+.category-selector {
+    padding: 14px 20px;
+    font-size: 1.3rem;
+    border: 2px solid #f3e03b; /* Matches gold theme */
+    border-radius: 10px;
+    background-color: #1a1a1a; /* Dark background for contrast */
+    color: #f3e03b;
+    transition: all 0.3s ease; /* Smooth hover animations */
+    outline: none;
+    width: 100%; /* Responsive — fits container width */
+    margin-bottom: 20px;
+}
+
+/* Dropdown hover + focus effect */
+.category-selector:hover,
+.category-selector:focus {
+    border-color: #ffd700; /* Slightly brighter gold */
+    background-color: #2a2a2a; /* Lighten background */
+    box-shadow: 0 0 12px #f3e03b80; /* Subtle glowing border */
+}
+
+
+/* ---------- BUTTON ---------- */
+.view-category-button {
+  position: relative; /* Needed for shine effect (::before) */
+  padding: 14px 28px;
+  border-radius: 50px; /* Rounded pill-shaped button */
+  border: none;
+  background: linear-gradient(90deg, #FFD700, #FFC107); /* Gold gradient */
+  color: #000;
+  font-weight: 800;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden; /* Keeps shine effect inside button */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Drop shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  margin-top: 6px;
+}
+
+.view-category-button:focus {
+  outline: none; /* Removes default blue outline */
+}
+
+/* ---------- SHINE EFFECT ---------- */
+/* Creates diagonal moving highlight on hover */
+.view-category-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%; /* Starts off-screen */
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.12) 60%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.9s ease; /* Smooth slide across */
+  pointer-events: none; /* Clicks pass through shine */
+}
+
+/* Shine animation triggers when hovered */
+.view-category-button:hover::before {
+  left: 125%;
+}
+
+/* Hover state: lift + glow + color swap */
+.view-category-button:hover {
+  transform: translateY(-5px) scale(1.05); /* Lift + slight enlarge */
+  background: linear-gradient(90deg, #FFC107, #FFD700); /* Reverse gradient */
+  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.8); /* Stronger glow */
+}
