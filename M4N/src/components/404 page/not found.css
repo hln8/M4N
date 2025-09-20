@@ -1,0 +1,42 @@
+#container {
+	width: 80%;
+	max-width: 1400px;
+	margin: 0 auto;
+	height: auto;
+	position: relative;
+	margin-top: 8%;
+}
+
+
+#content-area {
+	float: right;
+	max-width: 45%;
+	color: #dfd0b8;
+	font-weight: 300;
+	font-size: 18px;
+	padding-bottom: 40px;
+	line-height: 28px;
+}
+
+#content-area h1 {
+	margin: 0px;
+	font-weight: 400;
+	font-size: 42px;
+	margin-bottom: 40px;
+	line-height: normal;
+}
+
+
+@media all and (max-width: 899px) {
+	#container { width: 90%; }
+}
+
+@media all and (max-width: 799px) {
+	#container { width: 90%; height: auto; margin-top: 40px; top: 0%; }
+	#content-area { float: none; width: 90%; max-width: 90%; margin: 0 auto; margin-top: 30px; text-align: justify; }
+	#content-area h1 { text-align: left; }
+}
+
+@media all and (max-width: 499px) {
+	#content-area h1 { font-size: 28px; }
+}
