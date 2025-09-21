@@ -38,7 +38,7 @@ const Navbar = () => {
     };
 
     const handleMovieClick = (movie) => {
-        navigate('/movie-details', { state: { movie }});
+        navigate(`/movie/${movie.id}`)
     };
 
     return (
